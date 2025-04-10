@@ -9,10 +9,10 @@ This directory contains utilities for setting up Azure Identity and Access Manag
 - Permissions to create application registrations, service principals, and custom roles in Azure
 
 ## Quick Start
-The quickest way to set up the Azure IAM connector is through Azure Cloud Shell:
+The quickest way to set up up the IAM resources is through Azure Cloud Shell:
 
 ```bash
-bash <(curl -Ls https://raw.githubusercontent.com/akshay-tetration/connectors/main/azure/iam_setup_v1.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/CiscoDevNet/secure-workload-connectors/main/azure/iam/iam_setup_v1.sh)
 ```
 
 This command will execute the script with default settings (non-interactive mode).
@@ -91,3 +91,14 @@ If the script fails:
 - Ensure you're logged into the Azure CLI
 - Check if the resources already exist
 - Review any error messages displayed by the script
+
+### Role Deletion Issues
+When running the cleanup mode, it's possible that the custom role may not be deleted due to internal inconsistencies in Azure. If this happens:
+
+1. Wait approximately 5 minutes and try running the cleanup script again:
+   ```bash
+   ./iam_setup_v1.sh -m cleanup
+   ```
+
+2. If the role still exists after retrying, you will need to manually delete it using the Azure Portal or Azure CLI.
+Note: The error messages shown in the CLI when role deletion fails can be misleading.

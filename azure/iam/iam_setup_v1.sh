@@ -160,8 +160,8 @@ cleanup_resources() {
         exit 0
     fi
 
-    # Retrieve the list of subscriptions.
-    subscriptions=("c2f21153-dfdd-413b-afb2-411e7da24e37" "14c85a0f-cbe8-4ee2-b72c-d88499b75369" "2feee0b1-265e-4f07-bfb4-d826c1cf8438")
+    # Retrieve the list of subscriptions dynamically
+    subscriptions=$(az account list --query "[].id" -o tsv)
 
     ROLE_ASSIGNMENT_IDS=()
     # Retrieve the list of role assignment for each scope.
@@ -231,7 +231,8 @@ echo -e ""
 # List all the subscriptions
 echo "Fetching subscriptions..."
 az account list --output table --query "[].{Name:name, ID:id}"
-all_subs_ids="c2f21153-dfdd-413b-afb2-411e7da24e37,14c85a0f-cbe8-4ee2-b72c-d88499b75369,2feee0b1-265e-4f07-bfb4-d826c1cf8438"
+# Dynamically retrieve all subscription IDs
+all_subs_ids=$(az account list --query "[].id" -o tsv | tr '\n' ',' | sed 's/,$//')
 
 # Input for required subscriptions.
 if [ "$interactive" == "true" ]; then

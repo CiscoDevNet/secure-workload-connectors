@@ -9,8 +9,8 @@ The repository is organized by connector type, with each connector having its ow
 ## Available Connectors
 Below is a list of available connectors in this repository:
 
-- [Azure Connector](azure) - Integration with Azure cloud services for secure workload management, supporting resource monitoring, identity management, and security controls
-- [GCP Connector](gcp) - Google Cloud Platform integration for secure workload environments, enabling cloud resource management and security policy enforcement
+- [Azure Connector](azure)
+- [GCP Connector](gcp)
 
 ## Documentation
 Each connector has its own README file with detailed information about:
@@ -24,4 +24,4 @@ Please refer to the README file in each connector's directory for specific infor
 For issues or questions related to a specific connector, please reference the documentation in that connector's directory or open an issue with the appropriate connector tag.
 
 ## License
-This project is licensed under [LICENSE](/LICENSE).
+This project is licensed under MIT.
