@@ -9,7 +9,7 @@ This directory contains utilities for setting up Azure Identity and Access Manag
 - Permissions to create application registrations, service principals, and custom roles in Azure
 
 ## Quick Start
-The quickest way to set up the Azure IAM connector is through Azure Cloud Shell:
+The quickest way to set up up the IAM resources is through Azure Cloud Shell:
 
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/akshay-tetration/connectors/main/azure/iam_setup_v1.sh)
