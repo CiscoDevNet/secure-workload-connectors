@@ -301,6 +301,7 @@ cat > /tmp/role.json <<- EOF
           "Microsoft.Network/virtualNetworks/subnets/join/action",
           "Microsoft.Network/networkWatchers/flowLogs/write",
           "Microsoft.Resources/subscriptions/resourceGroups/read",
+          "Microsoft.Network/applicationSecurityGroups/*",
           "Microsoft.Network/publicIPAddresses/join/action"
         ],
   "dataActions": [
